@@ -19,24 +19,18 @@
     <div id="map"></div>
 
     <script>
-      var lat = -7.250445;
-      var lng = 112.768845;
+      var lat = -7.261927;
+      var lng = 112.737826;
 
-      var map = L.map("map").setView([lat, lng], 15);
+      var map = L.map("map").setView([lat, lng], 17);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
       }).addTo(map);
 
-      var marker = L.marker([lat, lng]).addTo(map);
-
-      function updateMarker(newLat, newLng) {
-        lat = newLat;
-        lng = newLng;
-
-        marker.setLatLng([lat, lng]);
-        map.setView([lat, lng], 17);
-      }
+      L.marker([lat, lng]).addTo(map)
+        .bindPopup("SMKN 2 Surabaya")
+        .openPopup();
     </script>
   </body>
 </html>
